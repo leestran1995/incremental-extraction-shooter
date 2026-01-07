@@ -1,6 +1,6 @@
 {
 	"name": "Customs",
-	"default_time": 3.0,
+	"default_time": 0.1,
 	"scav_success_chance": 1.0,
 	"loot_table": [
 		{
