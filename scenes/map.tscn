@@ -1,0 +1,63 @@
+[gd_scene load_steps=2 format=3 uid="uid://dswdjtxhk8c84"]
+
+[ext_resource type="Script" uid="uid://2qhrksotfoeq" path="res://map.gd" id="1_4xfga"]
+
+[node name="Map" type="PanelContainer"]
+custom_minimum_size = Vector2(200, 0)
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_top = -324.0
+offset_right = 200.0
+offset_bottom = -215.0
+grow_vertical = 2
+script = ExtResource("1_4xfga")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 2
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 5
+theme_override_constants/margin_bottom = 5
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+
+[node name="MapLabel" type="Label" parent="MarginContainer/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Default Map Label"
+
+[node name="SuccessChanceLabel" type="Label" parent="MarginContainer/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_font_sizes/font_size = 12
+text = "Default Chance"
+
+[node name="RaidProgressBar" type="ProgressBar" parent="MarginContainer/VBoxContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 26.55)
+layout_mode = 2
+show_percentage = false
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/VBoxContainer/RaidProgressBar"]
+layout_mode = 0
+offset_right = 1.0
+offset_bottom = 23.0
+theme_override_constants/margin_left = 5
+
+[node name="ProgressBarLabel" type="Label" parent="MarginContainer/VBoxContainer/RaidProgressBar/MarginContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="RaidButton" type="Button" parent="MarginContainer/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Raid"
+
+[node name="MapRaidTimer" type="Timer" parent="MarginContainer/VBoxContainer"]
+unique_name_in_owner = true
+one_shot = true
+
+[connection signal="pressed" from="MarginContainer/VBoxContainer/RaidButton" to="." method="_on_raid_button_pressed"]
+[connection signal="timeout" from="MarginContainer/VBoxContainer/MapRaidTimer" to="." method="_on_map_raid_timer_timeout"]

@@ -1,0 +1,8 @@
+{
+	"Bolts": {
+			"image": "res://images/bolts.png"
+	},
+	"Washers": {
+		"image": "res://images/washer.png"
+	}
+}

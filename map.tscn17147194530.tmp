@@ -1,0 +1,71 @@
+[gd_scene load_steps=2 format=3 uid="uid://dswdjtxhk8c84"]
+
+[ext_resource type="Script" uid="uid://2qhrksotfoeq" path="res://map.gd" id="1_c7s6e"]
+
+[node name="Map" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+size_flags_vertical = 3
+script = ExtResource("1_c7s6e")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+color = Color(0, 0.09019608, 0, 0.3647059)
+
+[node name="MapLabel" type="Label" parent="VBoxContainer/ColorRect"]
+layout_mode = 0
+offset_top = 4.0
+offset_right = 1112.0
+offset_bottom = 27.0
+text = "Default Map Label"
+
+[node name="SuccessChanceLabel" type="Label" parent="VBoxContainer/ColorRect"]
+layout_mode = 0
+offset_top = 30.0
+offset_right = 101.0
+offset_bottom = 54.0
+theme_override_font_sizes/font_size = 12
+text = "Default Chance"
+
+[node name="RaidProgressBar" type="ProgressBar" parent="VBoxContainer/ColorRect"]
+layout_mode = 0
+offset_top = 61.0
+offset_right = 1112.0
+offset_bottom = 88.0
+show_percentage = false
+
+[node name="ProgressBarLabel" type="Label" parent="VBoxContainer/ColorRect/RaidProgressBar"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -11.5
+offset_right = 20.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="RaidButton" type="Button" parent="VBoxContainer/ColorRect"]
+layout_mode = 0
+offset_top = 96.0
+offset_right = 1112.0
+offset_bottom = 127.0
+text = "Raid"
+
+[node name="MapRaidTimer" type="Timer" parent="VBoxContainer/ColorRect"]
+one_shot = true
+
+[connection signal="pressed" from="VBoxContainer/ColorRect/RaidButton" to="." method="_on_raid_button_pressed"]
+[connection signal="timeout" from="VBoxContainer/ColorRect/MapRaidTimer" to="." method="_on_map_raid_timer_timeout"]

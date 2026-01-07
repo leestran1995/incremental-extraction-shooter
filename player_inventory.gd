@@ -1,0 +1,21 @@
+extends Node
+
+var size = 16
+var items: Array[String] = []
+
+# Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta: float) -> void:
+	pass
+
+func add_item(item: String) -> bool:
+	if items.size() == size:
+		NotificationHandler.notify("Couldn't add item, inventory is full!")
+		return false
+		
+	items.append(item)
+	return true

@@ -1,0 +1,15 @@
+{
+	"name": "Customs",
+	"default_time": 3.0,
+	"scav_success_chance": 1.0,
+	"loot_table": [
+		{
+			"id": "Bolts",
+			"chance": 0.9
+		},
+		{
+			"id": "Washers",
+			"chance": 0.9
+		}
+	]
+}

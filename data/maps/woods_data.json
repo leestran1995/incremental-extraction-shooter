@@ -1,0 +1,15 @@
+{
+	"name": "Woods",
+	"default_time": 5.0,
+	"scav_success_chance": 0.2,
+	"loot_table": [
+		{
+			"id": "Bolts",
+			"chance": 0.8
+		},
+		{
+			"id": "Washers",
+			"chance": 0.7
+		}
+	]
+}

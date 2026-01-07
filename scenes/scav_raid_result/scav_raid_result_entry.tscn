@@ -1,0 +1,44 @@
+[gd_scene load_steps=2 format=3 uid="uid://uw2sw375202x"]
+
+[ext_resource type="Script" uid="uid://beie5yb4h22hq" path="res://scenes/scav_raid_result/scav_raid_result_entry.gd" id="1_xijri"]
+
+[node name="ScavRaidResultEntry" type="PanelContainer"]
+custom_minimum_size = Vector2(300, 0)
+offset_right = 300.0
+offset_bottom = 51.0
+script = ExtResource("1_xijri")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 4
+
+[node name="ScavRaidResultLabel" type="Label" parent="MarginContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+text = "Item Name"
+
+[node name="ScavRaidResultIcon" type="TextureRect" parent="MarginContainer/HBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="ButtonContainer" type="HBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+alignment = 2
+
+[node name="KeepScavRaidButton" type="Button" parent="MarginContainer/ButtonContainer"]
+layout_mode = 2
+text = "Keep"
+
+[node name="TossScavRaidButton" type="Button" parent="MarginContainer/ButtonContainer"]
+layout_mode = 2
+text = "Toss"
+
+[connection signal="pressed" from="MarginContainer/ButtonContainer/KeepScavRaidButton" to="." method="_on_keep_scav_raid_button_pressed"]
+[connection signal="pressed" from="MarginContainer/ButtonContainer/TossScavRaidButton" to="." method="_on_toss_scav_raid_button_pressed"]
