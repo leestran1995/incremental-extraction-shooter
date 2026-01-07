@@ -36,6 +36,7 @@ layout_mode = 2
 text = "Active Scene"
 
 [node name="ScavRaidSceneContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer"]
+visible = false
 layout_mode = 2
 size_flags_vertical = 3
 alignment = 1
@@ -49,7 +50,6 @@ layout_mode = 2
 size_flags_horizontal = 3
 
 [node name="InventorySceneContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer"]
-visible = false
 layout_mode = 2
 size_flags_vertical = 3
 alignment = 1

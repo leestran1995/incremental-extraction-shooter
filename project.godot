@@ -21,3 +21,8 @@ ScavRaidHandler="*res://scav_raid_handler.gd"
 PlayerInventory="*res://player_inventory.gd"
 ItemHandler="*res://item_handler.gd"
 NotificationHandler="*res://notification_handler.gd"
+
+[display]
+
+window/size/viewport_width=1920
+window/size/viewport_height=1080

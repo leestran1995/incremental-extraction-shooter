@@ -1,23 +1,38 @@
-[gd_scene load_steps=3 format=3 uid="uid://ddsn42ctjj33v"]
+[gd_scene load_steps=4 format=3 uid="uid://ddsn42ctjj33v"]
 
 [ext_resource type="Script" uid="uid://c824c7kn66pat" path="res://scenes/inventory_entry.gd" id="1_53sba"]
 [ext_resource type="Texture2D" uid="uid://dxso08l3rxpxj" path="res://images/bolts.png" id="2_53sba"]
+[ext_resource type="Script" uid="uid://dlrtko581v7ra" path="res://scenes/popup_control.gd" id="3_qu4uu"]
 
 [node name="InventoryEntry" type="PanelContainer"]
 offset_right = 32.0
 offset_bottom = 32.0
-mouse_filter = 2
 script = ExtResource("1_53sba")
 
 [node name="InventoryEntryTextureRect" type="TextureRect" parent="."]
 unique_name_in_owner = true
 layout_mode = 2
+mouse_filter = 2
 texture = ExtResource("2_53sba")
 
 [node name="InventoryEntryColorRect" type="ColorRect" parent="."]
 unique_name_in_owner = true
 layout_mode = 2
+mouse_filter = 2
 color = Color(1, 1, 1, 0)
 
-[connection signal="gui_input" from="." to="." method="_on_gui_input"]
+[node name="CenterContainer" type="CenterContainer" parent="."]
+layout_mode = 2
+script = ExtResource("3_qu4uu")
+
+[node name="EntryNamePopup" type="PanelContainer" parent="CenterContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="EntryNamePopupLabel" type="Label" parent="CenterContainer/EntryNamePopup"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Popup Label"
+
 [connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]
