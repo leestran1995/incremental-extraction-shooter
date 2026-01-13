@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://c58xqnk3mpjs7"]
 
-[ext_resource type="Script" uid="uid://oewpwch7fksd" path="res://notification_widget_container.gd" id="1_42sn7"]
+[ext_resource type="Script" uid="uid://oewpwch7fksd" path="res://autoloads/notification_widget_container.gd" id="1_42sn7"]
 
 [node name="NotificationWidgetContainer" type="PanelContainer"]
 script = ExtResource("1_42sn7")

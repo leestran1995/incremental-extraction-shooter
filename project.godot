@@ -18,9 +18,10 @@ config/icon="res://icon.svg"
 [autoload]
 
 ScavRaidHandler="*res://scav_raid_handler.gd"
-PlayerInventory="*res://player_inventory.gd"
-ItemHandler="*res://item_handler.gd"
-NotificationHandler="*res://notification_handler.gd"
+PlayerInventory="*res://autoloads/player_inventory.gd"
+ItemHandler="*res://autoloads/item_handler.gd"
+NotificationHandler="*res://autoloads/notification_handler.gd"
+Tooltip="*res://autoloads/tooltip.tscn"
 
 [display]
 

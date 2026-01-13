@@ -27,3 +27,9 @@ func add_item(item: String) -> bool:
 	
 	player_inventory_updated.emit()
 	return true
+
+func has_items(item_name: String, quantity: int):
+	var filtered = items.filter(func(i): return i == item_name)
+	var q = filtered.size()
+	return q >= quantity
+	

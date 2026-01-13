@@ -1,11 +1,13 @@
-[gd_scene load_steps=7 format=3 uid="uid://dauioimyabj8d"]
+[gd_scene load_steps=9 format=3 uid="uid://dauioimyabj8d"]
 
 [ext_resource type="Script" uid="uid://dseaeq0fayk8v" path="res://main.gd" id="1_h2yge"]
 [ext_resource type="PackedScene" uid="uid://xm5ei6ndby1w" path="res://scenes/scav_raid_scene.tscn" id="1_ig7tw"]
 [ext_resource type="PackedScene" uid="uid://bll31nrbg36sf" path="res://scenes/scav_raid_result/scav_raid_result_scene.tscn" id="2_0xm2m"]
-[ext_resource type="PackedScene" uid="uid://c58xqnk3mpjs7" path="res://notification_widget_container.tscn" id="4_1bvp3"]
-[ext_resource type="PackedScene" uid="uid://q60p3b30gesp" path="res://scenes/inventory_scene.tscn" id="4_7mycd"]
-[ext_resource type="Script" uid="uid://b0swmkoi06smm" path="res://inventory_button.gd" id="5_lquwl"]
+[ext_resource type="PackedScene" uid="uid://c58xqnk3mpjs7" path="res://autoloads/notification_widget_container.tscn" id="4_1bvp3"]
+[ext_resource type="PackedScene" uid="uid://q60p3b30gesp" path="res://scenes/inventory/inventory_scene.tscn" id="4_7mycd"]
+[ext_resource type="Script" uid="uid://b0swmkoi06smm" path="res://scenes/inventory/inventory_button.gd" id="5_lquwl"]
+[ext_resource type="PackedScene" uid="uid://cimy4vgy7tfn7" path="res://scenes/hideout/hideout_scene.tscn" id="6_5vw27"]
+[ext_resource type="PackedScene" uid="uid://becexp4nucvmc" path="res://autoloads/tooltip.tscn" id="7_272bh"]
 
 [node name="Main" type="Control"]
 layout_mode = 3
@@ -15,6 +17,9 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_h2yge")
+
+[node name="Tooltip" parent="." instance=ExtResource("7_272bh")]
+layout_mode = 0
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 layout_mode = 1
@@ -36,7 +41,6 @@ layout_mode = 2
 text = "Active Scene"
 
 [node name="ScavRaidSceneContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer"]
-visible = false
 layout_mode = 2
 size_flags_vertical = 3
 alignment = 1
@@ -50,6 +54,7 @@ layout_mode = 2
 size_flags_horizontal = 3
 
 [node name="InventorySceneContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer"]
+visible = false
 layout_mode = 2
 size_flags_vertical = 3
 alignment = 1
@@ -57,6 +62,14 @@ alignment = 1
 [node name="InventoryScene" parent="MarginContainer/VBoxContainer/InventorySceneContainer" instance=ExtResource("4_7mycd")]
 layout_mode = 2
 size_flags_horizontal = 3
+
+[node name="HideoutSceneContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer"]
+visible = false
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="HideoutScene" parent="MarginContainer/VBoxContainer/HideoutSceneContainer" instance=ExtResource("6_5vw27")]
+layout_mode = 2
 
 [node name="NotificationWidgetContainer" parent="MarginContainer/VBoxContainer" instance=ExtResource("4_1bvp3")]
 layout_mode = 2
@@ -93,3 +106,4 @@ text = "Other"
 [connection signal="pressed" from="MarginContainer/VBoxContainer/NavButtonContainer/InventoryButton" to="." method="_on_inventory_button_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/NavButtonContainer/ScavManagementButton" to="." method="_on_scav_management_button_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/NavButtonContainer/OtherButton" to="." method="_on_other_button_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/NavButtonContainer/Hideout" to="." method="_on_hideout_pressed"]
