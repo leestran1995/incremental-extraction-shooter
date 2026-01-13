@@ -1,17 +1,8 @@
 extends Control
 @onready var inventory_entry_texture_rect: TextureRect = %InventoryEntryTextureRect
 @onready var inventory_entry_color_rect: ColorRect = %InventoryEntryColorRect
-@onready var panel_container: PanelContainer = $PanelContainer
-@onready var entry_name_popup_label: Label = %EntryNamePopupLabel
-@onready var entry_name_popup: PanelContainer = %EntryNamePopup
 
-var mouse_hovering: bool = false:
-	set(new_value):
-		mouse_hovering = new_value
-		if mouse_hovering:
-			entry_name_popup.show()
-		else:
-			entry_name_popup.hide()
+var mouse_hovering: bool = false
 
 var image_path: String:
 	set(new_value):
@@ -24,7 +15,6 @@ var image_path: String:
 var item_name: String:
 	set(new_value):
 		item_name = new_value
-		entry_name_popup_label.text = item_name
 
 var invy_index: int
 
@@ -32,7 +22,6 @@ var right_click_down: bool = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	entry_name_popup.hide()
 	pass # Replace with function body.
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -50,10 +39,12 @@ func _input(event: InputEvent) -> void:
 				PlayerInventory.remove_item(invy_index)
 		
 func _on_mouse_entered() -> void:
+	Tooltip.show_tooltip(item_name)
 	if not mouse_hovering:
 		mouse_hovering = true
 
 func _on_mouse_exited() -> void:
+	Tooltip.clear_tooltip()
 	right_click_down = false
 	if mouse_hovering:
 		mouse_hovering = false

@@ -23,7 +23,6 @@ func _process(delta: float) -> void:
 	var index = 0
 	
 	for i in items:
-		print("drawing item")
 		var new_entry = INVENTORY_ENTRY.instantiate()
 		grid_container.add_child(new_entry)
 

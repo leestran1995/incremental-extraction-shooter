@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://cimy4vgy7tfn7"]
+
+[ext_resource type="Script" uid="uid://yhkxip23tq3a" path="res://scenes/hideout/hideout_scene.gd" id="1_l1gd4"]
+[ext_resource type="PackedScene" uid="uid://bpur66is21hpd" path="res://scenes/hideout/furniture_container.tscn" id="2_hxrw4"]
+
+[node name="HideoutScene" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_l1gd4")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="FurnitureContainer" parent="VBoxContainer" instance=ExtResource("2_hxrw4")]
+visible = false
+layout_mode = 2

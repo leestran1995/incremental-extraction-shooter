@@ -1,0 +1,26 @@
+[gd_scene load_steps=2 format=3 uid="uid://becexp4nucvmc"]
+
+[ext_resource type="Script" uid="uid://rkb5n1fev6rq" path="res://tooltip.gd" id="1_gwequ"]
+
+[node name="Tooltip" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_gwequ")
+
+[node name="TooltipContainer" type="PanelContainer" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="MarginContainer" type="MarginContainer" parent="TooltipContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 5
+theme_override_constants/margin_bottom = 5
+
+[node name="TooltipLabel" type="Label" parent="TooltipContainer/MarginContainer"]
+layout_mode = 2
+text = "TooltipLabel"

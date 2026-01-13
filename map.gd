@@ -1,6 +1,5 @@
 extends Control
 
-const CUSTOMS_DATA: Resource = preload("res://data/maps/customs_data.json")
 @onready var raid_progress_bar: ProgressBar = %RaidProgressBar
 @onready var map_label: Label = %MapLabel
 @onready var success_chance_label: Label = %SuccessChanceLabel

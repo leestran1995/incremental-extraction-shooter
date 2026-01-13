@@ -1,0 +1,49 @@
+[gd_scene load_steps=2 format=3 uid="uid://bpur66is21hpd"]
+
+[ext_resource type="Script" uid="uid://cvis05cj0tl8y" path="res://scenes/hideout/furniture.gd" id="1_5sii8"]
+
+[node name="FurnitureContainer" type="PanelContainer"]
+script = ExtResource("1_5sii8")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 2
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 5
+theme_override_constants/margin_bottom = 5
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+
+[node name="FurnitureLabel" type="Label" parent="MarginContainer/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Default Furniture Label"
+
+[node name="CraftingProgressBar" type="ProgressBar" parent="MarginContainer/VBoxContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 26.55)
+layout_mode = 2
+show_percentage = false
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/VBoxContainer/CraftingProgressBar"]
+layout_mode = 0
+offset_right = 1.0
+offset_bottom = 23.0
+theme_override_constants/margin_left = 5
+
+[node name="ProgressBarLabel" type="Label" parent="MarginContainer/VBoxContainer/CraftingProgressBar/MarginContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="UpgradeButton" type="Button" parent="MarginContainer/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Upgrade"
+
+[node name="MapRaidTimer" type="Timer" parent="MarginContainer/VBoxContainer"]
+unique_name_in_owner = true
+one_shot = true
+
+[node name="UpgradeItemsContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2

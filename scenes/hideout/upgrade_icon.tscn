@@ -1,0 +1,25 @@
+[gd_scene load_steps=3 format=3 uid="uid://c840qabchryhq"]
+
+[ext_resource type="Texture2D" uid="uid://dxso08l3rxpxj" path="res://images/bolts.png" id="1_g262q"]
+[ext_resource type="Script" uid="uid://dnlk0oc8njw5h" path="res://scenes/hideout/upgrade_icon.gd" id="2_2h5pl"]
+
+[node name="TextureRect" type="TextureRect"]
+texture = ExtResource("1_g262q")
+script = ExtResource("2_2h5pl")
+
+[node name="Quantity" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -40.0
+offset_top = -23.0
+grow_horizontal = 0
+grow_vertical = 0
+text = "3"
+horizontal_alignment = 2
+
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]

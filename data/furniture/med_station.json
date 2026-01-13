@@ -1,0 +1,23 @@
+{
+	"name": "Med Station",
+	"upgrade_items": [
+		{
+			"item": "Bolts",
+			"quantity": 5
+		},
+		{
+			"item": "Washers",
+			"quantity": 5
+		}
+	],
+	"recipes": [
+		{
+			"level_required": 1,
+			"result": "Coffee",
+			"ingredients": [
+				"Bolts",
+				"Washers"
+			]
+		}
+	]
+}
